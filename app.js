@@ -41,7 +41,8 @@ function agregarAmigo() {
     
     const deleteButton = document.createElement('button');
     deleteButton.className = 'button-delete';
-    deleteButton.innerHTML = '×';
+    deleteButton.id = 'delete';
+    deleteButton.innerHTML = 'Borrar';
     deleteButton.onclick = () => eliminarAmigo(nombre, li);
     
     li.appendChild(nombreSpan);
@@ -94,9 +95,9 @@ function sortearAmigo() {
     
     // Mostrar el resultado
     resultadoElement.innerHTML = '';
-    const li = document.createElement('li');
+    const li = document.createElement('h1');
     li.className = 'result-item';
-    li.textContent = `¡${nombreSorteado}!`;
+    li.textContent = `Su Amigo Secreto es ¡${nombreSorteado}!`;
     resultadoElement.appendChild(li);
 }
 
@@ -108,7 +109,7 @@ function reiniciarJuego() {
     
     // Limpiar la interfaz
     document.getElementById('listaAmigos').innerHTML = '';
-    document.getElementById('resultado').innerHTML = '';
+    document.getElementById('resultado').innerHTML = 'Digite el nombre de sus amigos';
     document.getElementById('amigo').value = '';
 }
 

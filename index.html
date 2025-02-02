@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="./assets/favicon.ico" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <title>Amigo Secreto</title>
@@ -14,19 +15,16 @@
     <main class="main-content">
         <header class="header-banner">
             <h1 class="main-title">Amigo Secreto</h1>
-            <img src="assets/amigo-secreto.png" alt="Imagen representativa de amigo secreto">
+            <img class="imagen"  src="assets/amigo-secreto.png" alt="Imagen representativa de amigo secreto">
         </header>
         
         <section class="input-section">
-            <h2 class="section-title">Digite el nombre de sus amigos</h2>
-            <div class="input-wrapper">
+            <h2 class="section-title" id="resultado">Digite el nombre de sus amigos</h2>
+            <br/>
+            <div class="contenedor">
                 <input type="text" id="amigo" class="input-name" placeholder="Escribe un nombre">
-                <button class="button-add" onclick="agregarAmigo()">Añadir</button>
-            </div>
-           
-            <ul id="listaAmigos" class="name-list" aria-labelledby="listaAmigos" role="list"></ul>
-            <ul id="resultado" class="result-list" aria-live="polite"></ul>
-            <div class="botones">
+                <div class="botones">
+                <button class="button-add" onclick="agregarAmigo()" aria-label="Añadir amigo secreto">Añadir</button>
                 <button class="button-draw" onclick="sortearAmigo()" aria-label="Sortear amigo secreto">
                     <img src="assets/play_circle_outline.png" alt="Ícono para sortear">
                     Sortear amigo
@@ -34,8 +32,16 @@
                 <button class="button-reset" onclick="reiniciarJuego()" aria-label="Reiniciar juego">
                     Reiniciar juego
                 </button>
+                </div>
             </div>
+        </br>
+        <section class="list-section">
+            <h3 class="tituloAmigosIngresados">Lista de Amigos Ingresados</h3>
+            <ul id="listaAmigos" class="name-list" aria-labelledby="listaAmigos" role="list"></ul>
+            <!-- <ul id="resultado" class="result-list" aria-live="polite"></ul> -->
         </section>
+        </section>
+
     </main>
 
     <script src="app.js" defer></script>
