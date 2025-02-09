@@ -175,8 +175,19 @@ button img {
     margin-bottom: 30px;
 }
 
+.imgadd{
+    width: 30px;
+    height: auto;
+}
 
-
+.imgsort{
+    width: 23px;
+    height: auto;
+}
+.imgreset{
+    width: 20px;
+    height: auto;
+}
       
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -203,8 +214,9 @@ button img {
     }
 
     .imagen {
-        width: 60%;
+        width: 50%;
         height: auto;
+        margin-top: 60px;
     }
 
     .contenedor {
