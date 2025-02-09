@@ -2,6 +2,12 @@
 let listaAmigos = [];
 let nombresSorteados = [];
 
+function asignarTextoElemento(elemento, texto) {
+    let elementoHTML = document.querySelector(elemento);
+    elementoHTML.innerHTML = texto;
+    return;
+}
+
 // Función para validar y agregar un amigo
 function agregarAmigo() {
     const inputAmigo = document.getElementById('amigo');
@@ -10,22 +16,22 @@ function agregarAmigo() {
     
     // Validaciones
     if (nombre === '') {
-        alert('Por favor, ingrese un nombre');
+        asignarTextoElemento('#resultado', 'Debe ingresar un nombre antes de añadir.');
         return;
     }
     
     if (nombre.length < 3) {
-        alert('El nombre debe tener al menos 3 caracteres');
+        asignarTextoElemento('#resultado', 'El nombre debe tener al menos 3 caracteres');
         return;
     }
     
     if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombre)) {
-        alert('El nombre solo debe contener letras');
+        asignarTextoElemento('#resultado', 'El nombre solo debe contener letras');
         return;
     }
     
     if (listaAmigos.includes(nombre)) {
-        alert('Este nombre ya está en la lista');
+        asignarTextoElemento('#resultado', 'Este nombre ya está en la lista');
         return;
     }
 
@@ -51,6 +57,9 @@ function agregarAmigo() {
     
     // Limpiar el input
     inputAmigo.value = '';
+    
+    // Restaurar el mensaje original
+    asignarTextoElemento('#resultado', 'Digite el nombre de sus amigos');
 }
 
 // Función para eliminar un amigo
@@ -70,11 +79,9 @@ function eliminarAmigo(nombre, elemento) {
 
 // Función para sortear un amigo
 function sortearAmigo() {
-    const resultadoElement = document.getElementById('resultado');
-    
-    // Validar que haya participantes
-    if (listaAmigos.length === 0) {
-        alert('Agregue al menos un participante para realizar el sorteo');
+    // Validar que haya al menos dos participantes
+    if (listaAmigos.length < 2) {
+        asignarTextoElemento('#resultado', 'Debe ingresar al menos dos nombres antes de sortear.');
         return;
     }
 
@@ -82,7 +89,7 @@ function sortearAmigo() {
     const nombresDisponibles = listaAmigos.filter(nombre => !nombresSorteados.includes(nombre));
     
     if (nombresDisponibles.length === 0) {
-        alert('Ya se han sorteado todos los nombres. Reinicie el juego para volver a sortear.');
+        asignarTextoElemento('#resultado', 'Ya se han sorteado todos los nombres. Reinicie el juego para volver a sortear.');
         return;
     }
 
@@ -94,11 +101,7 @@ function sortearAmigo() {
     nombresSorteados.push(nombreSorteado);
     
     // Mostrar el resultado
-    resultadoElement.innerHTML = '';
-    const li = document.createElement('h1');
-    li.className = 'result-item';
-    li.textContent = `Su Amigo Secreto es ¡${nombreSorteado}!`;
-    resultadoElement.appendChild(li);
+    asignarTextoElemento('#resultado', `Su Amigo Secreto es ¡${nombreSorteado}!`);
 }
 
 // Función para reiniciar el juego
@@ -109,7 +112,7 @@ function reiniciarJuego() {
     
     // Limpiar la interfaz
     document.getElementById('listaAmigos').innerHTML = '';
-    document.getElementById('resultado').innerHTML = 'Digite el nombre de sus amigos';
+    asignarTextoElemento('#resultado', 'Digite el nombre de sus amigos');
     document.getElementById('amigo').value = '';
 }
 

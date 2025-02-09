@@ -97,7 +97,6 @@ button {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background-color: #44c508;
 }
 
 button img {
@@ -108,14 +107,28 @@ button img {
 
 .button-add {
     border-radius: 25px;
+    background-color: #02c723;
 }
 
 .button-add:hover {
-    background-color: #a1a1a1;
+    background-color: rgb(38, 0, 255);
+}
+.button-draw {
+    border-radius: 25px;
+    background-color: #daff05e1;
 }
 
 .button-draw:hover {
-    background-color: grey;
+    background-color: rgb(38, 0, 255);
+}
+
+.button-reset {
+    border-radius: 25px;
+    background-color: #ff0000;
+}
+
+.button-reset:hover {
+    background-color: rgb(38, 0, 255);
 }
 
 /* Button Container */
