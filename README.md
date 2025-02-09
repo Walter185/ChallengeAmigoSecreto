@@ -47,4 +47,3 @@ No requiere ninguna librería adicional ni entorno de desarrollo. Puedes probarl
 - **[CSS3](https://developer.mozilla.org/es/docs/Web/CSS)**: Estilos para una interfaz sencilla.
 - **[JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)**: Lógica para gestionar la lista de amigos y realizar el sorteo aleatorio.
 
-## Conéctate conmigo 🌐
