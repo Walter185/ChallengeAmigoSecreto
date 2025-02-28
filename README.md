@@ -1,8 +1,6 @@
 # Proyecto AMIGO SECRETO 👫  
 *AluraLatam & Oracle*
 
-Your site is live at https://walter185.github.io/ChallengeAmigoSecreto/
-
 Este es un pequeño proyecto en JavaScript que permite gestionar una lista de amigos. Los usuarios pueden agregar nuevos amigos, ver la lista actualizada y seleccionar aleatoriamente a uno de ellos. 🎲
 
 ---
